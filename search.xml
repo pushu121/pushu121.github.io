@@ -54,6 +54,31 @@
     
     
     <entry>
+      <title>hugo搭建个人博客(windows)</title>
+      <link href="/2021/11/04/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(windows)/"/>
+      <url>/2021/11/04/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(windows)/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="hugo搭建个人博客-windows"><a href="#hugo搭建个人博客-windows" class="headerlink" title="hugo搭建个人博客(windows)"></a>hugo搭建个人博客(windows)</h3><h4 id="1-下载Hugo安装包"><a href="#1-下载Hugo安装包" class="headerlink" title="1. 下载Hugo安装包"></a>1. 下载Hugo安装包</h4><p>​    1.1. 下载安装包直接解压得到 <code>hugo.exe</code></p><p><a href="https://github.com/gohugoio/hugo/releases">安装包下载</a>  建议直接下载<code>extended</code>版本的    </p><p>​    1.2. 配置环境变量    将 <code>hugo.exe</code>  路径配置到环境变量 path中</p><p>​    1.3.打开cmd窗口  执行<code>hugo version</code>  显示版本    表示安装正确</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103112702096.png" alt="image-20211103112702096"></p><h4 id="2-搭建个人博客"><a href="#2-搭建个人博客" class="headerlink" title="2. 搭建个人博客"></a>2. 搭建个人博客</h4><p>创建一个文件夹   作为保存自己网页的文件夹   进入文件夹   执行`hugo new site XXX(名字自己起)</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103113323148.png" alt="image-20211103113323148"></p><p>表示创建成功   你会在创建的文件夹下看到一个   XXX文件夹 (就是存放你博客站点文件)</p><p>其中config.toml是网站的配置文件，content文件夹放Markdown文档，data文件夹放数据，layouts文件夹放网站模板文件，static文件夹放图片、css、js 等静态资源，themes文件夹存放主题</p><p>进入到XXX文件夹 下面  执行<code>hugo server</code></p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103114026477.png" alt="image-20211103114026477"></p><h4 id="3-修改博客主题"><a href="#3-修改博客主题" class="headerlink" title="3.修改博客主题"></a>3.修改博客主题</h4><h5 id="1-下载需要的主题"><a href="#1-下载需要的主题" class="headerlink" title="1. 下载需要的主题"></a>1. 下载需要的主题</h5><p><a href="https://themes.gohugo.io/">hugo主题下载</a></p><p>本人下载m10c</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103114814070.png" alt="image-20211103114814070"></p><p>进入到 themes目录</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103114904752.png" alt="image-20211103114904752"></p><p>执行 <code> git clone https://github.com/vaga/hugo-theme-m10c.git</code>  克隆主题</p><h5 id="2-修改主题"><a href="#2-修改主题" class="headerlink" title="2. 修改主题"></a>2. 修改主题</h5><p>在站点的主目录找到<code>config.toml</code>并编辑其中的theme参数，将其修改为下载的皮肤的名称（如果没有此行参数，请按下图添加），如<code>theme = &quot;hugo-theme-m10c&quot;</code>。</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103115337296.png" alt="image-20211103115337296"></p><h5 id="3-添加页面"><a href="#3-添加页面" class="headerlink" title="3.添加页面"></a>3.添加页面</h5><p>进入XXX目录  执行<code>hugo new post/pushu.md</code>     那么content\post文件加下有个文件  编辑文件</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103115720084.png" alt="image-20211103115720084"></p><p>然后再XXX目录下  执行<code>hugo server</code></p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103115841821.png" alt="image-20211103115841821"></p><p>访问<code>localhost:1313</code>  看到如下页面</p><p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103115940238.png" alt="image-20211103115940238"></p><p>表示本地博客搭建成功</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hugo搭建博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hugo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/11/03/hello-world/"/>
       <url>/2021/11/03/hello-world/</url>
