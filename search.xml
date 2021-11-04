@@ -88,7 +88,32 @@
       
       <categories>
           
-          <category> SpringBoot + Jpa 实现多条件动态查询 </category>
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot中应用Quartz</title>
+      <link href="/2021/11/04/SpringBoot%E4%B8%AD%E5%BA%94%E7%94%A8Quartz/"/>
+      <url>/2021/11/04/SpringBoot%E4%B8%AD%E5%BA%94%E7%94%A8Quartz/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li>Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来创建简单或为运行十个，百个，甚至是好几万个Jobs这样复杂的程序。</li><li>我们在使用Quartz来创建定时任务是,只需要关注三点内容  : Job（任务），Trigger（触发器）和Scheduler（调度器）<pre><code> Job :  我们想要做的定时任务内容是什么。</code></pre>　　Trigger :  我们想在什么时间上执行job。<br>　　Scheduler :  触发器生效 , 进行定时任务。</li></ol><h1 id="在SpringBoot中应用Quartz"><a href="#在SpringBoot中应用Quartz" class="headerlink" title="在SpringBoot中应用Quartz"></a>在SpringBoot中应用Quartz</h1><ol><li>在pom.xml中添加依赖</li></ol><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- scheduled所属资源为spring-context-support，在Spring中对Quartz的支持，是集成在spring-context-support包中。org.springframework.scheduling.quartz --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context-support<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Quartz坐标 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.quartz-scheduler<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>quartz<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- Quartz默认需要slf4j支持。springboot中，提供了更高版本的slf4j --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Spring tx 坐标，quartz可以提供分布式定时任务环境。多个分布点上的Quartz任务，是通过数据库实现任务信息传递的.通过数据库中的数据，保证一个时间点上，只有一个分布环境执行定时任务--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-tx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure><p>2.在SpringBoot启动类使用@EnableScheduling注解  </p><p><img src="https://img-blog.csdnimg.cn/20201121102819185.png#pic_center" alt="在这里插入图片描述"><br>3. 编写自己的定时任务实现job<br><img src="https://img-blog.csdnimg.cn/20201121103126457.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NfQl9NX1o=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>4. 编写定时任务配置类<br><img src="https://img-blog.csdnimg.cn/20201121103451164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NfQl9NX1o=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>5.重写JobFactory 实现将JobDetail对象加入到Spring容器中，让Spring容器管理，并自动装配逻辑。<br><img src="https://img-blog.csdnimg.cn/20201121104025746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NfQl9NX1o=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>6. 启动 测试</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot </category>
           
       </categories>
       
