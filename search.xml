@@ -104,6 +104,31 @@
     
     
     <entry>
+      <title>将java项目jar包设为开机自启项目</title>
+      <link href="/2021/11/04/%E5%B0%86java%E9%A1%B9%E7%9B%AEjar%E5%8C%85%E8%AE%BE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2021/11/04/%E5%B0%86java%E9%A1%B9%E7%9B%AEjar%E5%8C%85%E8%AE%BE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E9%A1%B9%E7%9B%AE/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Windows-系统下"><a href="#Windows-系统下" class="headerlink" title="Windows 系统下"></a>Windows 系统下</h3><ol><li>新建一个文本文件 , 将 <code>java -jar D:\workspace\xxx\libs\xxx.jar</code>写在其中 , 修改后缀名为XXX.bat</li><li>新建文本文件xxx.text  将下面的内容拷入, 修改文件后缀名为XXX.vbs</li></ol><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set ws = CreateObject(“Wscript.Shell”)</span><br><span class="line">ws.run “cmd /c D:\workspace\xxx\libs\XXX.bat”,vbhide</span><br></pre></td></tr></table></figure><ol start="3"><li>将vbs文件创建快捷方式 , 放在开机自启目录下<br> <code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup</code></li><li>重新启动</li></ol><h3 id="linux系统下"><a href="#linux系统下" class="headerlink" title="linux系统下"></a>linux系统下</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/11/03/hello-world/"/>
       <url>/2021/11/03/hello-world/</url>
