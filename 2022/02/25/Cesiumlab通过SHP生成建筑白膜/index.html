@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Cesiumlab通过SHP生成建筑白膜 | 大寨路朴树</title><meta name="keywords" content="cesiumlab"><meta name="author" content="DZL_pushu"><meta name="copyright" content="DZL_pushu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="登录成功后选择左侧*矢量楼快切片*   ****输入文件****选择需要转换的shp矢量，SHP需要转换至WGS84（EPSG:4326）坐标系   将面板的属性修改如下   切换至地形高程面板，按如下步骤选择shp所在的DME数据，需要tif格式   切换至贴图效果面板，选择设置   设置floor &#x3D;&#x3D; 1，选择自定义，分别选择侧面跟顶面的纹理图片，注意贴图的宽度（单位米）   然后选择添加，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cesiumlab通过SHP生成建筑白膜">
+<meta property="og:url" content="http://example.com/2022/02/25/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/index.html">
+<meta property="og:site_name" content="大寨路朴树">
+<meta property="og:description" content="登录成功后选择左侧*矢量楼快切片*   ****输入文件****选择需要转换的shp矢量，SHP需要转换至WGS84（EPSG:4326）坐标系   将面板的属性修改如下   切换至地形高程面板，按如下步骤选择shp所在的DME数据，需要tif格式   切换至贴图效果面板，选择设置   设置floor &#x3D;&#x3D; 1，选择自定义，分别选择侧面跟顶面的纹理图片，注意贴图的宽度（单位米）   然后选择添加，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/archive_img.jpg">
+<meta property="article:published_time" content="2022-02-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-25T08:26:27.793Z">
+<meta property="article:author" content="DZL_pushu">
+<meta property="article:tag" content="cesiumlab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/archive_img.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/02/25/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cesiumlab通过SHP生成建筑白膜',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-25 16:26:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/myself.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" href="/myself/"><i class="fa-fw fa fa-id-card"></i><span> Myself</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/archive_img.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">大寨路朴树</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" href="/myself/"><i class="fa-fw fa fa-id-card"></i><span> Myself</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cesiumlab通过SHP生成建筑白膜</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-24T16:00:00.000Z" title="发表于 2022-02-25 00:00:00">2022-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-25T08:26:27.793Z" title="更新于 2022-02-25 16:26:27">2022-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/">Cesiumlab通过SHP生成建筑白膜</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cesiumlab通过SHP生成建筑白膜"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>登录成功后选择左侧<em><strong>*矢量楼快切片*</strong></em></p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps1.jpg" alt="img"> </p>
+<p>****输入文件****选择需要转换的shp矢量，SHP需要转换至WGS84（EPSG:4326）坐标系</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps2.jpg" alt="img"> </p>
+<p>将面板的属性修改如下</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps3.jpg" alt="img"> </p>
+<p>切换至地形高程面板，按如下步骤选择shp所在的DME数据，需要tif格式</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps4.jpg" alt="img"> </p>
+<p>切换至贴图效果面板，选择设置</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps5.jpg" alt="img"> </p>
+<p>设置floor == 1，选择自定义，分别选择侧面跟顶面的纹理图片，注意贴图的宽度（单位米）</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps6.jpg" alt="img"> </p>
+<p>然后选择添加，设置floor == 2 的材质信息</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps7.jpg" alt="img"> </p>
+<p>以此类推，一直设置到30多层</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps8.jpg" alt="img"> </p>
+<p>对与数量较少的高层楼可以进行适当合并，比如想要设置36-39之间的楼为同一个材质时，可以在设置了floor==35之后，设置条件floor &lt; 40，那么36-39的楼均会被贴上同一种材质</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps9.jpg" alt="img"> </p>
+<p>想要40-49为同一个材质时，同样在选择floor&lt;50，那么40-49的楼均会被贴上同一种材质</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps10.jpg" alt="img"> </p>
+<p>最后需要设置一个 &gt;= 某个楼层数的条件进行收尾</p>
+<p>其中floor &lt; 40，floor &lt; 50，floor &gt;=50只是举例，可以根据不同情况进行拆分，分的越精细模型材质越细化，但是要保证以下几个条件：</p>
+<p>a、在满足floor=X条件后，才能设置floor &lt; X</p>
+<p>b、只能按顺序设置floor &lt; X，最后设置floor &gt;= Y；不能设置成floor==35, floor &gt;= 36, floor &gt;=40, floor &gt;=50这种组合，这样会把36及以上的矢量均贴为同一材质。</p>
+<p>c、屋顶材质的选择最好选择没有边沿的过度的图片，因为贴的材质都只能是正的，而有的楼可能是斜的，这样就会出现瓷砖一样的效果</p>
+<p>*文件内提供一些墙体跟房顶的材质可供选择，没有合适的就需要另外找了</p>
+<p>*贴图的宽度是指的这张图片对应的模型长度（单位米）</p>
+<p>侧面纹理的贴图宽度可以通过图片的宽高比及楼高换算贴图宽度，具体公式为x/y<em>3</em>floor；</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps11.jpg" alt="img"> </p>
+<p>（比如图片尺寸为128<em>256，那么当floor=15层时，贴图宽度为 128/256</em>3*15 = 22.5）</p>
+<p>顶面纹理的宽度需要依据选择的图片测试找到最佳的效果，同样指这张图片贴的距离（米）；</p>
+<p>最后，选择输出文件夹位置，点击确定</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps12.jpg" alt="img"> </p>
+<p>等待进度条完成即可</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps13.jpg" alt="img"> </p>
+<p>预览数据：选择分发服务&gt;&gt;瓦片服务&gt;&gt;上次保存文件夹的数据 </p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps14.jpg" alt="img"> </p>
+<p>点击图标<img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps15.jpg" alt="img">即可预览，若发现矢量高度不对可以选择14级的地形配套预览</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps16.jpg" alt="img"> </p>
+<h1 id="第二篇"><a href="#第二篇" class="headerlink" title="*第二篇*"></a><em><strong>*第二篇*</strong></em></h1><h1 id="修改数据部分"><a href="#修改数据部分" class="headerlink" title="*修改数据部分*"></a><em><strong>*修改数据部分*</strong></em></h1><p>遇到需要重新生成模型文件时，比如修改了shp，或者某个楼的材质需要单独贴的时候，有以下几种方式：</p>
+<p>1、修改了层数，或者新增了矢量时，或者需要更换某个楼层整体的材质时</p>
+<p>选择数据处理，处理日志，找到相应处理的版本，选择重新处理</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps17.jpg" alt="img"> </p>
+<p>这样贴图信息跟其他属性都在，然后选择新版本的数据，更换新的导出位置，重新制作</p>
+<p><img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps18.jpg" alt="img"> </p>
+<p>对制作完的新数据进行预览查看是否已更新</p>
+<p>2、重点房屋需要单独进行贴纹理时</p>
+<p>需要两步操作:</p>
+<p>第一步，先在完整shp中去除这些数据，重新制作瓦片；</p>
+<p>第二步，将选择出的矢量单独导出，然后按第一篇步骤将这条数据进行单独的贴纹理操作，贴图条件不用floor过滤，使用唯一标识id进行过滤，id值为shp里该条数据的id，墙面贴图宽度计算方法跟之前一样x/y<em>3</em>floor，然后将这些重点数据单独导出一份模型瓦片数据。<img src="file:///C:\Users\lenovo\AppData\Local\Temp\ksohtml3732\wps19.jpg" alt="img"></p>
+<p>这样最终成果会是两份</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">DZL_pushu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/02/25/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/">http://example.com/2022/02/25/Cesiumlab通过SHP生成建筑白膜/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">大寨路朴树</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cesiumlab/">cesiumlab</a></div><div class="post_share"><div class="social-share" data-image="/img/archive_img.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/02/07/%E6%96%B0%E5%B9%B4%E4%BC%8A%E5%A7%8B/"><img class="next-cover" src="/img/archive_img.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2022伊始</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DZL_pushu</div><div class="author-info__description">If you want to get something, you have to fight for it. You must show your ability. </div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pushu121"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">DZL-pushu</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text">*第二篇*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">*修改数据部分*</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/25/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/" title="Cesiumlab通过SHP生成建筑白膜"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cesiumlab通过SHP生成建筑白膜"/></a><div class="content"><a class="title" href="/2022/02/25/Cesiumlab%E9%80%9A%E8%BF%87SHP%E7%94%9F%E6%88%90%E5%BB%BA%E7%AD%91%E7%99%BD%E8%86%9C/" title="Cesiumlab通过SHP生成建筑白膜">Cesiumlab通过SHP生成建筑白膜</a><time datetime="2022-02-24T16:00:00.000Z" title="发表于 2022-02-25 00:00:00">2022-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/07/%E6%96%B0%E5%B9%B4%E4%BC%8A%E5%A7%8B/" title="2022伊始"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022伊始"/></a><div class="content"><a class="title" href="/2022/02/07/%E6%96%B0%E5%B9%B4%E4%BC%8A%E5%A7%8B/" title="2022伊始">2022伊始</a><time datetime="2022-02-06T16:00:00.000Z" title="发表于 2022-02-07 00:00:00">2022-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/29/SpringBootAdmin%E5%BA%94%E7%94%A8/" title="SpringBootAdmin应用"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBootAdmin应用"/></a><div class="content"><a class="title" href="/2022/01/29/SpringBootAdmin%E5%BA%94%E7%94%A8/" title="SpringBootAdmin应用">SpringBootAdmin应用</a><time datetime="2022-01-28T16:00:00.000Z" title="发表于 2022-01-29 00:00:00">2022-01-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/02/Hexo%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="hexo问题解决方法"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo问题解决方法"/></a><div class="content"><a class="title" href="/2021/12/02/Hexo%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="hexo问题解决方法">hexo问题解决方法</a><time datetime="2021-12-02T08:03:04.000Z" title="发表于 2021-12-02 16:03:04">2021-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/02/OpenApi/" title="API"><img src="/img/archive_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="API"/></a><div class="content"><a class="title" href="/2021/12/02/OpenApi/" title="API">API</a><time datetime="2021-12-02T08:03:04.000Z" title="发表于 2021-12-02 16:03:04">2021-12-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 <i id="heartbeat" class="fa fas fa-heartbeat"></i>  DZL_pushu</div><div class="copyright">&copy;2022 <i id="heartbeat" class="fa fas fa-heartbeat"></i> DZL_pushu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="啦啦,嘿嘿,呵呵" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script><!-- hexo injector body_end end --></body></html>
